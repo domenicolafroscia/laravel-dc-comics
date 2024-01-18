@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
 @section('content') 
-    <h1>contenuto</h1> 
+
+    <div class="container">
+        <h1>Welcome To Dc-Comic panel</h1>
+    </div> 
+
 @endsection
