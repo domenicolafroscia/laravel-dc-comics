@@ -4,6 +4,12 @@
     <div class="container">
         <h1>Create a new comic</h1>
 
+        @if (Session::has('message'))
+            <div class="alert alert-success">
+                {{ Session::get('message') }}
+            </div>
+        @endif
+
         <div class="row justify-content-center mt-5">
             <div class="col-6 mb-5">
                 <form action="{{ route('comics.store') }}" method="POST">
@@ -26,7 +32,7 @@
 
                     <div class="mb-3">
                         <label for="price" class="form-label">Price</label>
-                        <input type="number" class="form-control" id="price" name="price">
+                        <input type="text" class="form-control" id="price" name="price">
                     </div>
 
                     <div class="mb-3">

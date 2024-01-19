@@ -7,6 +7,12 @@
             <a class="btn btn-primary" href="{{ route('comics.create') }}">Create a comic</a>
         </div>
 
+        @if (Session::has('message'))
+            <div class="alert alert-success">
+                {{ Session::get('message') }}
+            </div>
+        @endif
+
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -29,8 +35,16 @@
                         <td>{{ $comic->sale_date }}</td>
                         <td>{{ $comic->type }}</td>
                         <td>
-                            <a class="btn btn-success" href="{{ route('comics.show', ['comic' => $comic->id]) }}"><i class="fa-solid fa-info"></i></a>
-                            <a class="btn btn-warning" href="{{ route('comics.edit', ['comic' => $comic->id]) }}"><i class="fa-solid fa-pencil"></i></a>
+                            <a class="btn btn-success" href="{{ route('comics.show', ['comic' => $comic->id]) }}"><i
+                                    class="fa-solid fa-info"></i></a>
+                            <a class="btn btn-warning" href="{{ route('comics.edit', ['comic' => $comic->id]) }}"><i
+                                    class="fa-solid fa-pencil"></i></a>
+                            <form class="d-inline-block" action="{{ route('comics.destroy', ['comic' => $comic->id]) }}"
+                                method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-danger" type="submit"><i class="fa-solid fa-trash"></i></button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

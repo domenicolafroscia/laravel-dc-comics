@@ -2,6 +2,13 @@
 
 @section('content')
     <div class="container">
+
+        @if (Session::has('message'))
+            <div class="alert alert-success">
+                {{ Session::get('message') }}
+            </div>
+        @endif
+
         <h1>{{ $comic->title }}</h1>
         <img src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
 
