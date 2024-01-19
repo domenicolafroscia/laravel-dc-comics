@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>Lista dei comics</h1>
+        <h1>Comics list</h1>
         <div class="text-end">
             <a class="btn btn-primary" href="{{ route('comics.create') }}">Create a comic</a>
         </div>
@@ -29,7 +29,8 @@
                         <td>{{ $comic->sale_date }}</td>
                         <td>{{ $comic->type }}</td>
                         <td>
-                            <a class="btn btn-success" href="{{ route('comics.show', ['comic' => $comic->id]) }}">Details</a>
+                            <a class="btn btn-success" href="{{ route('comics.show', ['comic' => $comic->id]) }}"><i class="fa-solid fa-info"></i></a>
+                            <a class="btn btn-warning" href="{{ route('comics.edit', ['comic' => $comic->id]) }}"><i class="fa-solid fa-pencil"></i></a>
                         </td>
                     </tr>
                 @endforeach

@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1>Crea una nuova pasta</h1>
+        <h1>Create a new comic</h1>
 
         <div class="row justify-content-center mt-5">
             <div class="col-6 mb-5">
@@ -26,7 +26,7 @@
 
                     <div class="mb-3">
                         <label for="price" class="form-label">Price</label>
-                        <input type="text" class="form-control" id="price" name="price">
+                        <input type="number" class="form-control" id="price" name="price">
                     </div>
 
                     <div class="mb-3">
@@ -36,7 +36,7 @@
 
                     <div class="mb-3">
                         <label for="sale_date" class="form-label">Sale date</label>
-                        <input type="text" class="form-control" id="sale_date" name="sale_date">
+                        <input type="date" class="form-control" id="sale_date" name="sale_date">
                     </div>
 
                     <div class="mb-3">
