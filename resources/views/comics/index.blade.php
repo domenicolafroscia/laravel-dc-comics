@@ -43,7 +43,7 @@
                                 method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-danger" type="submit"><i class="fa-solid fa-trash"></i></button>
+                                <button class="btn btn-danger btn-delete" type="submit" data-title="{{ $comic->title }}"><i class="fa-solid fa-trash"></i></button>
                             </form>
                         </td>
                     </tr>
@@ -51,5 +51,8 @@
 
             </tbody>
         </table>
+
+        @include('partials.delete-modal')
     </div>
 @endsection
+ 
